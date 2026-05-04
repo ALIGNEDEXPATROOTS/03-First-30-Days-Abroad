@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The First 30 Days Abroad — Aligned Expat Roots</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1a1a1a;--bg2:#2b2b2b;--matcha:#bfe07a;--coral:#f4a39a;--teal:#7dcfc4;--white:#ffffff;--soft:#faf3ec;--muted:#a89a85;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--soft);font-family:'Space Grotesk',sans-serif;min-height:100vh;}
+.topbar{background:var(--bg);border-bottom:1px solid #2b2b2b;padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.topbar-brand{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);}
+.topbar-link{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+.topbar-link:hover{color:var(--matcha);}
+.wrap{max-width:720px;margin:0 auto;padding:2.5rem 1.5rem 4rem;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--coral);margin-bottom:.5rem;}
+h1{font-family:'Fraunces',serif;font-style:italic;font-size:2.4rem;color:var(--white);margin-bottom:.4rem;line-height:1.2;}
+.subtitle{font-size:.95rem;color:var(--muted);margin-bottom:.5rem;}
+.week-tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:2rem;margin-top:1.2rem;}
+.week-tab{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:7px 16px;border-radius:20px;border:1px solid #3a3a3a;background:transparent;color:var(--muted);cursor:pointer;transition:all .2s;}
+.week-tab.active{background:var(--bg2);border-color:var(--coral);color:var(--coral);}
+.week-content{display:none;}
+.week-content.visible{display:block;}
+.week-intro{font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:1.5rem;border-left:3px solid var(--coral);padding-left:.9rem;}
+.task-item{display:flex;align-items:flex-start;gap:.9rem;padding:.9rem 1rem;background:var(--bg2);border-radius:12px;margin-bottom:.5rem;cursor:pointer;transition:all .2s;border:1px solid transparent;}
+.task-item:hover{border-color:#3a3a3a;}
+.task-item.done{opacity:.4;}
+.task-item.done .task-title{text-decoration:line-through;}
+.check{width:20px;height:20px;border-radius:50%;border:2px solid #555;flex-shrink:0;margin-top:1px;transition:all .2s;display:flex;align-items:center;justify-content:center;}
+.task-item.done .check{background:var(--coral);border-color:var(--coral);}
+.checkmark{color:var(--bg);font-size:12px;display:none;}
+.task-item.done .checkmark{display:block;}
+.task-body{flex:1;}
+.task-title{font-size:.9rem;color:var(--soft);font-weight:500;margin-bottom:.2rem;}
+.task-tip{font-size:.8rem;color:var(--muted);line-height:1.5;}
+.priority-tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:8px;display:inline-block;margin-bottom:.3rem;}
+.p-urgent{background:rgba(244,163,154,.15);color:var(--coral);}
+.p-important{background:rgba(191,224,122,.15);color:var(--matcha);}
+.p-wellbeing{background:rgba(125,207,196,.15);color:var(--teal);}
+.progress-row{display:flex;align-items:center;gap:.8rem;margin-bottom:.4rem;}
+.progress-bar{flex:1;height:4px;background:var(--bg2);border-radius:2px;overflow:hidden;}
+.progress-fill{height:100%;background:var(--coral);border-radius:2px;transition:width .4s;}
+.progress-label{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#555;margin-bottom:.7rem;margin-top:1.4rem;}
+@keyframes buttonGlow{0%{box-shadow:0 0 18px 4px rgba(191,224,122,.6);}33%{box-shadow:0 0 18px 4px rgba(244,163,154,.6);}66%{box-shadow:0 0 18px 4px rgba(125,207,196,.6);}100%{box-shadow:0 0 18px 4px rgba(191,224,122,.6);}}
+.reset-btn{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:8px 18px;border-radius:12px;border:1px solid #555;background:transparent;color:var(--muted);cursor:pointer;margin-top:1.5rem;animation:buttonGlow 3s ease-in-out infinite;transition:transform .2s;}
+.reset-btn:hover{transform:scale(1.03);}
+.footer-bar{background:var(--bg);border-top:1px solid #2b2b2b;padding:1.5rem 2rem;text-align:center;font-family:'JetBrains Mono',monospace;font-size:9px;color:#444;letter-spacing:.1em;}
+.footer-bar a{color:var(--teal);text-decoration:none;}
+@keyframes sparkleAnim{0%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0deg);}100%{opacity:0;transform:translate(-50%,-50%) scale(.2) rotate(180deg) translateY(-20px);}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <span class="topbar-brand">Aligned Expat Roots</span>
+  <a class="topbar-link" href="https://skool.com/earthway-sanctuary-3366/about" target="_blank">Join the Community ↗</a>
+</div>
+
+<div class="wrap">
+  <div class="eyebrow">Nomad Compass Library</div>
+  <h1>The First 30 Days Abroad</h1>
+  <p class="subtitle">Your week-by-week landing guide. Tap to check tasks off as you go.</p>
+
+  <div class="progress-row">
+    <div class="progress-bar"><div class="progress-fill" id="main-prog" style="width:0%"></div></div>
+    <div class="progress-label" id="main-prog-label">0% complete</div>
+  </div>
+
+  <div class="week-tabs">
+    <button class="week-tab active" onclick="showWeek(1,this)">Days 1–3</button>
+    <button class="week-tab" onclick="showWeek(2,this)">Days 4–7</button>
+    <button class="week-tab" onclick="showWeek(3,this)">Week 2</button>
+    <button class="week-tab" onclick="showWeek(4,this)">Week 3</button>
+    <button class="week-tab" onclick="showWeek(5,this)">Week 4</button>
+  </div>
+
+  <div class="week-content visible" id="week1">
+    <div class="week-intro">You landed. It's loud, disorienting, and nothing looks the way it did in photos. This is normal. Your job this week is not to figure everything out — it's just to get safe, rested, and oriented.</div>
+    <div class="section-label">Urgent — do first</div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-urgent">Urgent</span><div class="task-title">Get a working SIM or activate your eSIM</div><div class="task-tip">Having data on arrival is non-negotiable. Find a local SIM vendor at the airport or activate Airalo before landing. Navigation, translation, and finding help all depend on this.</div></div></div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-urgent">Urgent</span><div class="task-title">Confirm your accommodation is ready</div><div class="task-tip">Message your host or landlord before you board your flight. Have a backup plan in case something falls through — know the name of a nearby hotel.</div></div></div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-urgent">Urgent</span><div class="task-title">Locate cash or activate your travel card</div><div class="task-tip">ATMs at airports often charge high fees. Have your Wise or Revolut card ready as backup. Taxis, deposits, and small shops often need cash in the first 48 hours.</div></div></div>
+    <div class="section-label">Settling in</div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-important">Important</span><div class="task-title">Walk your neighborhood — no agenda</div><div class="task-tip">Within 24 hours, walk a 15-minute circle around where you're staying. Find the nearest pharmacy, supermarket, café, and public transport. This one walk does more for your sense of safety than anything else.</div></div></div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-wellbeing">Wellbeing</span><div class="task-title">Let the people who care about you know you arrived</div><div class="task-tip">A quick message prevents worry cascades. You don't need to be excited or chatty — just "I'm here, I'm okay" goes a long way.</div></div></div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-wellbeing">Wellbeing</span><div class="task-title">Sleep, eat, and do nothing useful on Day 1</div><div class="task-tip">Resist the urge to optimize your first day. Your nervous system needs to register where it is. Eat something local, rest properly, and let the strangeness just exist around you.</div></div></div>
+  </div>
+
+  <div class="week-content" id="week2">
+    <div class="week-intro">The honeymoon phase and the panic phase sometimes arrive in the same afternoon. You're figuring out how to be a person in a new place. Focus on building the small routines that make a place feel less foreign.</div>
+    <div class="section-label">Practical setup</div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-urgent">Urgent</span><div class="task-title">Register your address if required by law</div><div class="task-tip">Many countries require foreign nationals to register within a specific window. This step unlocks your national ID number, banking, and other services. Don't skip it.</div></div></div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-important">Important</span><div class="task-title">Open a local bank account or confirm your international card works here</div><div class="task-tip">Some countries require a local bank account for rent, utilities, or visa compliance. Research whether you need one and what documents are required.</div></div></div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-important">Important</span><div class="task-title">Find a reliable regular grocery store</div><div class="task-tip">Knowing where to buy food cheaply and reliably in your area is one of the fastest ways to build a weekly rhythm — and rhythm is what turns "surviving" into "living."</div></div></div>
+    <div class="section-label">Connections</div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-wellbeing">Wellbeing</span><div class="task-title">Find one expat community or local event to attend</div><div class="task-tip">Meetup.com, Internations, Facebook expat groups for your city, or a local language exchange event. You just need one real conversation this week.</div></div></div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-wellbeing">Wellbeing</span><div class="task-title">Find a café or spot you actually like</div><div class="task-tip">Your third place — not home, not work, but yours. Somewhere you can sit with a coffee and feel like you belong a little.</div></div></div>
+  </div>
+
+  <div class="week-content" id="week3">
+    <div class="week-intro">Week 2 is often when the emotional dip hits. The novelty wears off, the practical annoyances pile up, and you miss things you didn't expect to miss. This is not failure. This is settling in. Keep going.</div>
+    <div class="section-label">Admin progress</div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-important">Important</span><div class="task-title">Sort your longer-term housing plan</div><div class="task-tip">If you're in short-term accommodation, start seriously looking at longer-term options. Join local Facebook housing groups. Be realistic about what you can afford once you factor in utility deposits.</div></div></div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-important">Important</span><div class="task-title">Research your nearest health clinic or doctor</div><div class="task-tip">Before you need it — not when you need it. Know where the nearest walk-in clinic is, how health insurance claims work abroad, and what basic medications are called locally.</div></div></div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-important">Important</span><div class="task-title">Set up essential utilities if in longer-term housing</div><div class="task-tip">Internet is often the hardest and slowest to set up. Prioritise this. Electricity and water are usually tied to the landlord initially — confirm arrangements in writing.</div></div></div>
+    <div class="section-label">Emotional check-in</div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-wellbeing">Wellbeing</span><div class="task-title">Write down 3 things that have gone well so far</div><div class="task-tip">Not for social media. Just for yourself. The brain is wired to notice threats, not wins. Actively naming what's working builds real resilience.</div></div></div>
+  </div>
+
+  <div class="week-content" id="week4">
+    <div class="week-intro">By week 3, you know more than you realise. You have routes, rhythms, a few faces you recognise. Things are starting to make sense in a background sort of way. Keep building on that.</div>
+    <div class="section-label">Building stability</div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-important">Important</span><div class="task-title">Build a weekly rhythm that works for you</div><div class="task-tip">Anchor points in the week create a sense of home faster than anything else. A regular market, gym class, café morning, or language lesson — it just needs to be yours.</div></div></div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-important">Important</span><div class="task-title">Learn 20 essential phrases in the local language</div><div class="task-tip">You don't need to be fluent. But "please", "thank you", "where is", "how much", "I don't understand" transforms how locals respond to you. Duolingo works. So does asking shopkeepers to correct you.</div></div></div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-wellbeing">Wellbeing</span><div class="task-title">Stay in touch with one person from your old life each week</div><div class="task-tip">One check-in call per week with someone you love back home keeps your roots alive. Don't wait until you're lonely to reach out — stay connected before the loneliness sets in.</div></div></div>
+  </div>
+
+  <div class="week-content" id="week5">
+    <div class="week-intro">One month. That's real. Take a breath and look at how far you've come — not just logistically, but as a person who made a hard thing happen.</div>
+    <div class="section-label">Reflection</div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-wellbeing">Wellbeing</span><div class="task-title">Do a 30-day review — honestly</div><div class="task-tip">Ask yourself: What was harder than expected? What was easier? What do I wish I'd done differently? What's actually great here? Honest reflection now will shape how you handle month 2, 3, and beyond.</div></div></div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-important">Important</span><div class="task-title">Review your visa timeline and upcoming requirements</div><div class="task-tip">Now that the chaos of landing has settled, double-check where you stand on your visa. Calendar everything now before months blur together.</div></div></div>
+    <div class="task-item" onclick="toggleItem(this)"><div class="check"><span class="checkmark">✓</span></div><div class="task-body"><span class="priority-tag p-wellbeing">Wellbeing</span><div class="task-title">Decide what you want your life here to actually look like</div><div class="task-tip">Month 1 was survival mode. Month 2 can be intentional. Set one meaningful intention for the next 30 days — not a task list, just a direction.</div></div></div>
+  </div>
+
+  <button class="reset-btn" onclick="resetAll30()">Reset all progress</button>
+</div>
+
+<div class="footer-bar">
+  Aligned Expat Roots · Nomad Compass Library · <a href="https://skool.com/earthway-sanctuary-3366/about" target="_blank">Join the Community</a>
+</div>
+
+<style>@keyframes sparkleAnim{0%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0deg);}100%{opacity:0;transform:translate(-50%,-50%) scale(.2) rotate(180deg) translateY(-20px);}}</style>
+<script>
+function toggleItem(el){el.classList.toggle('done');updateMainProgress();}
+function showWeek(n,btn){
+  document.querySelectorAll('.week-content').forEach(w=>w.classList.remove('visible'));
+  document.getElementById('week'+n).classList.add('visible');
+  document.querySelectorAll('.week-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+}
+function updateMainProgress(){
+  const all=document.querySelectorAll('.task-item');
+  const done=Array.from(all).filter(t=>t.classList.contains('done'));
+  const pct=Math.round((done.length/all.length)*100);
+  document.getElementById('main-prog').style.width=pct+'%';
+  document.getElementById('main-prog-label').textContent=pct+'% complete';
+}
+function resetAll30(){document.querySelectorAll('.task-item').forEach(t=>t.classList.remove('done'));updateMainProgress();}
+const SC=['#bfe07a','#f4a39a','#7dcfc4','#ffffff'];
+function spark(x,y){const s=document.createElement('div');const c=SC[Math.floor(Math.random()*SC.length)];const sz=Math.random()*8+4;s.style.cssText=`position:fixed;left:${x}px;top:${y}px;width:${sz}px;height:${sz}px;pointer-events:none;z-index:9999;transform:translate(-50%,-50%) rotate(45deg);background:${c};clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);animation:sparkleAnim 0.7s ease-out forwards;`;document.body.appendChild(s);setTimeout(()=>s.remove(),700);}
+let ls=0;document.addEventListener('mousemove',e=>{const n=Date.now();if(n-ls>40){spark(e.clientX,e.clientY);ls=n;}});
+</script>
+</body>
+</html>
